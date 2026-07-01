@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: azure-vote-back
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: azure-vote-back
@@ -16,7 +16,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
       - name: azure-vote-back
-        image: mgabriele5487.microsoft.com/oss/bitnami/redis:6.0.8
+        image: mcr.microsoft.com/oss/bitnami/redis:6.0.8
         env:
         - name: ALLOW_EMPTY_PASSWORD
           value: "yes"
@@ -39,7 +39,7 @@ kind: Deployment
 metadata:
   name: azure-vote-front
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       app: azure-vote-front
